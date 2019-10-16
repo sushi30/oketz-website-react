@@ -13,7 +13,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 export default ({ even }) => (
   <section>
-    <MainContainer even={even} >
+    <MainContainer even={even}>
       <Typography variant="h3">טופס הרשמה</Typography>
       <Formik
         onSubmit={({ values }) => {
@@ -22,7 +22,7 @@ export default ({ even }) => (
         render={() => (
           <Form>
             <Grid container>
-              <Grid item xs={3}>
+              <Grid item xs={4}>
                 <Field
                   name="name"
                   render={({ field }) => (
@@ -30,7 +30,7 @@ export default ({ even }) => (
                   )}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <Field
                   name="email"
                   render={({ field }) => (
@@ -38,7 +38,7 @@ export default ({ even }) => (
                   )}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <Field
                   name="tel"
                   render={({ field }) => (
@@ -46,27 +46,40 @@ export default ({ even }) => (
                   )}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <Field
                   name="id"
                   render={({ field }) => (
-                    <TextField {...field} margin="normal" label="מספר תעודת זהות (כולל ספרת ביקורת)" />
+                    <TextField
+                      {...field}
+                      variant="outlined"
+                      margin="normal"
+                      label="מספר תעודת זהות (כולל ספרת ביקורת)"
+                    />
                   )}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <Field
                   name="gender"
                   render={({ field }) => (
-                    <FormControl component="fieldset">
+                    <FormControl
+                      component="fieldset"
+                      variant="outlined"
+                      style={{ display: "inline-block" }}
+                    >
                       <FormLabel component="legend">מין</FormLabel>
-                      <RadioGroup {...field}>
+                      <RadioGroup
+                        {...field}
+                        style={{ display: "inline-block" }}
+                      >
                         <FormControlLabel
                           value="female"
                           control={<Radio />}
                           label="נקבה"
                         />
                         <FormControlLabel
+                          style={{ display: "inline-block" }}
                           value="male"
                           control={<Radio />}
                           label="זכר"

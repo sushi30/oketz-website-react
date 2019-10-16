@@ -1,7 +1,7 @@
 import Container from "@material-ui/core/Container";
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
-import bg1 from "./images/bg1.jpeg";
+import bg1 from "./images/k9/1.jpeg";
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 import TitleSection from "./TitleSection";
 import DescriptionSection from "./sections/Description";
