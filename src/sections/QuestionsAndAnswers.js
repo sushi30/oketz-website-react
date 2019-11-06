@@ -1,11 +1,12 @@
 import { Typography } from "@material-ui/core";
 import React from "react";
 import MainContainer from "../SectionContainer";
+import SectionTitle from "../SectionTitle";
 
 export default ({ even }) => (
   <section>
     <MainContainer even={even}>
-      <Typography variant="h3">שאלות ותשובות</Typography>
+      <SectionTitle>שאלות ותשובות</SectionTitle>
       <Typography variant="subtitle1">מי מזמן אותי לגיבוש?</Typography>
       <Typography variant="subtitle2">מיטב</Typography>
       <Typography variant="subtitle1">

@@ -2,11 +2,12 @@ import { Typography } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import React from "react";
 import MainContainer from "../SectionContainer";
+import SectionTitle from "../SectionTitle";
 
 export default ({ even }) => (
   <section>
     <MainContainer even={even}>
-      <Typography variant="h3">תנאי קבלה</Typography>
+      <SectionTitle variant="h3">תנאי קבלה</SectionTitle>
       <Typography variant="p">
         במידה והנתונים האישיים הרפואיים שנקבעו לך בצו ראשון עומדים בסף הקבלה
         ללוחם בעוקץ, תזומן לאחר הרשמתך ליום הכנה, הכולל היכרות ראשונית עם היחידה

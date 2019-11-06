@@ -13,7 +13,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 export default ({ even }) => (
   <section>
-    <MainContainer even={even} >
+    <MainContainer style={{ maxWidth: 800 }} even={even}>
       <Typography variant="h3">טופס הרשמה</Typography>
       <Formik
         onSubmit={({ values }) => {
@@ -21,46 +21,85 @@ export default ({ even }) => (
         }}
         render={() => (
           <Form>
-            <Grid container>
-              <Grid item xs={3}>
+            <Grid container justify="space-evenly">
+              <Grid item lg={6} xs={12}>
                 <Field
                   name="name"
                   render={({ field }) => (
-                    <TextField {...field} margin="normal" label="שם" />
+                    <TextField
+                      {...field}
+                      InputLabelProps={{ style: {textAlign: "right"} }}
+                      margin="normal"
+                      label="שם"
+                      variant="outlined"
+                      fullWidth
+                      style={{ maxWidth: 340 }}
+                    />
                   )}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item lg={6} xs={12}>
                 <Field
                   name="email"
                   render={({ field }) => (
-                    <TextField {...field} margin="normal" label="כתובת מייל" />
+                    <TextField
+                      {...field}
+                      margin="normal"
+                      label="כתובת מייל"
+                      variant="outlined"
+                      fullWidth
+                      style={{ maxWidth: 340 }}
+                    />
                   )}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item lg={6} xs={12}>
                 <Field
                   name="tel"
                   render={({ field }) => (
-                    <TextField {...field} margin="normal" label="טלפון" />
+                    <TextField
+                      {...field}
+                      margin="normal"
+                      label="טלפון"
+                      variant="outlined"
+                      fullWidth
+                      style={{ maxWidth: 340 }}
+                    />
                   )}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item lg={6} xs={12}>
                 <Field
                   name="id"
                   render={({ field }) => (
-                    <TextField {...field} margin="normal" label="מספר תעודת זהות (כולל ספרת ביקורת)" />
+                    <TextField
+                      {...field}
+                      margin="normal"
+                      label="מספר תעודת זהות (כולל ספרת ביקורת)"
+                      variant="outlined"
+                      fullWidth
+                      style={{ maxWidth: 340 }}
+                    />
                   )}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item lg={6} xs={12}>
                 <Field
                   name="gender"
                   render={({ field }) => (
-                    <FormControl component="fieldset">
-                      <FormLabel component="legend">מין</FormLabel>
-                      <RadioGroup {...field}>
+                    <FormControl
+                      component="fieldset"
+                      style={{ maxWidth: 340 }}
+                      variant="outlined"
+                    >
+                      <FormLabel component="legend" labelPlacement="top">
+                        מין
+                      </FormLabel>
+                      <RadioGroup
+                        {...field}
+                        style={{ flexDirection: "row" }}
+                        variant="outlined"
+                      >
                         <FormControlLabel
                           value="female"
                           control={<Radio />}
@@ -76,11 +115,19 @@ export default ({ even }) => (
                   )}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item lg={6} xs={12}>
                 <Field
                   name="grade"
                   render={({ field }) => (
-                    <TextField {...field} select label="כיתה" margin="normal">
+                    <TextField
+                      {...field}
+                      select
+                      label="כיתה"
+                      margin="normal"
+                      fullWidth
+                      style={{ maxWidth: 340 }}
+                      variant="outlined"
+                    >
                       {[
                         { label: "יא", value: "11" },
                         { label: "יב", value: "12" }
