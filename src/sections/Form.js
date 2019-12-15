@@ -10,106 +10,160 @@ import FormLabel from "@material-ui/core/FormLabel";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 import MenuItem from "@material-ui/core/MenuItem";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import Button from "@material-ui/core/Button";
+import Input from "@material-ui/core/Input";
 
-export default ({ even }) => (
-  <section>
-    <MainContainer even={even}>
-      <Typography variant="h3">טופס הרשמה</Typography>
-      <Formik
-        onSubmit={({ values }) => {
-          console.log(values);
-        }}
-        render={() => (
-          <Form>
-            <Grid container>
-              <Grid item xs={4}>
-                <Field
-                  name="name"
-                  render={({ field }) => (
-                    <TextField {...field} margin="normal" label="שם" />
-                  )}
-                />
-              </Grid>
-              <Grid item xs={4}>
-                <Field
-                  name="email"
-                  render={({ field }) => (
-                    <TextField {...field} margin="normal" label="כתובת מייל" />
-                  )}
-                />
-              </Grid>
-              <Grid item xs={4}>
-                <Field
-                  name="tel"
-                  render={({ field }) => (
-                    <TextField {...field} margin="normal" label="טלפון" />
-                  )}
-                />
-              </Grid>
-              <Grid item xs={4}>
-                <Field
-                  name="id"
-                  render={({ field }) => (
-                    <TextField
-                      {...field}
-                      variant="outlined"
-                      margin="normal"
-                      label="מספר תעודת זהות (כולל ספרת ביקורת)"
-                    />
-                  )}
-                />
-              </Grid>
-              <Grid item xs={4}>
-                <Field
-                  name="gender"
-                  render={({ field }) => (
-                    <FormControl
-                      component="fieldset"
-                      variant="outlined"
-                      style={{ display: "inline-block" }}
-                    >
-                      <FormLabel component="legend">מין</FormLabel>
-                      <RadioGroup
-                        {...field}
-                        style={{ display: "inline-block" }}
-                      >
-                        <FormControlLabel
-                          value="female"
-                          control={<Radio />}
-                          label="נקבה"
-                        />
-                        <FormControlLabel
-                          style={{ display: "inline-block" }}
-                          value="male"
-                          control={<Radio />}
-                          label="זכר"
-                        />
-                      </RadioGroup>
-                    </FormControl>
-                  )}
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <Field
-                  name="grade"
-                  render={({ field }) => (
-                    <TextField {...field} select label="כיתה" margin="normal">
-                      {[
-                        { label: "יא", value: "11" },
-                        { label: "יב", value: "12" }
-                      ].map(option => (
-                        <MenuItem key={option.value} value={option.value}>
-                          {option.label}
-                        </MenuItem>
-                      ))}
-                    </TextField>
-                  )}
-                />
-              </Grid>
-            </Grid>
-          </Form>
-        )}
-      />
-    </MainContainer>
-  </section>
+const useStyles = makeStyles({
+  formControl: { left: "unset" },
+  icon: { position: "unset" }
+});
+
+const MyTextField = props => (
+  <TextField
+    {...props.field}
+    InputLabelProps={{
+      classes: { formControl: props.classes.formControl }
+    }}
+    {...props}
+    margin="normal"
+    fullWidth
+  />
 );
+
+const MyGridItem = ({ children }) => (
+  <Grid item xs={6} style={{ paddingLeft: 20, paddingRight: 20 }}>
+    {children}
+  </Grid>
+);
+
+export default ({ even }) => {
+  const classes = useStyles();
+  return (
+    <section>
+      <MainContainer even={even}>
+        <Typography variant="h3">טופס הרשמה</Typography>
+        <Formik
+          onSubmit={({ values }) => {
+            console.log(values);
+          }}
+          render={() => (
+            <Form>
+              <Grid container>
+                <MyGridItem>
+                  <Field
+                    name="name"
+                    render={({ field }) => (
+                      <MyTextField {...field} classes={classes} label="שם" />
+                    )}
+                  />
+                </MyGridItem>
+                <MyGridItem>
+                  <Field
+                    name="email"
+                    render={({ field }) => (
+                      <MyTextField
+                        {...field}
+                        classes={classes}
+                        label="כתובת מייל"
+                      />
+                    )}
+                  />
+                </MyGridItem>
+                <MyGridItem>
+                  <Field
+                    name="tel"
+                    render={({ field }) => (
+                      <MyTextField {...field} classes={classes} label="טלפון" />
+                    )}
+                  />
+                </MyGridItem>
+                <MyGridItem>
+                  <Field
+                    name="id"
+                    render={({ field }) => (
+                      <MyTextField
+                        {...field}
+                        classes={classes}
+                        label="מספר תעודת זהות (כולל ספרת ביקורת)"
+                      />
+                    )}
+                  />
+                </MyGridItem>
+                <MyGridItem>
+                  <Field
+                    name="gender"
+                    render={({ field }) => (
+                      <FormControl
+                        component="fieldset"
+                        variant="outlined"
+                        style={{
+                          flexDirection: "row",
+                          display: "flex"
+                        }}
+                      >
+                        <div>
+                          <Typography color="textSecondary" component="legend">
+                            מין
+                          </Typography>
+                        </div>
+                        <RadioGroup
+                          {...field}
+                          style={{ display: "inline-block" }}
+                        >
+                          <FormControlLabel
+                            value="female"
+                            control={<Radio />}
+                            label="נקבה"
+                          />
+                          <FormControlLabel
+                            style={{ display: "inline-block" }}
+                            value="male"
+                            control={<Radio />}
+                            label="זכר"
+                          />
+                        </RadioGroup>
+                      </FormControl>
+                    )}
+                  />
+                </MyGridItem>
+                <MyGridItem>
+                  <Field
+                    name="grade"
+                    render={({ field }) => (
+                      <TextField
+                        InputLabelProps={{
+                          classes: { formControl: classes.formControl }
+                        }}
+                        {...field}
+                        select
+                        SelectProps={{
+                          classes: { icon: classes.icon }
+                        }}
+                        style={{ minWidth: 100 }}
+                        label="כיתה"
+                        margin="normal"
+                      >
+                        {[
+                          { label: "יא", value: "11" },
+                          { label: "יב", value: "12" }
+                        ].map(option => (
+                          <MenuItem key={option.value} value={option.value}>
+                            {option.label}
+                          </MenuItem>
+                        ))}
+                      </TextField>
+                    )}
+                  />
+                </MyGridItem>
+              </Grid>
+              <Button type="submit" variant="contained" color="primary">
+                שלח
+              </Button>
+            </Form>
+          )}
+        />
+      </MainContainer>
+    </section>
+  );
+};

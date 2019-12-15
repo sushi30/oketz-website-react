@@ -8,6 +8,7 @@ import QuestionsAndAnswers from "./sections/QuestionsAndAnswers";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Form from "./sections/Form";
 import BackgroundCarousel from "./CarouselBackground";
+import Portfolio from "./sections/Portfolio";
 
 const useStyles = makeStyles({
   root: {
@@ -30,7 +31,7 @@ const Body = () => (
     <Dates even={false} />
     <Requirements even={true} />
     <QuestionsAndAnswers even={false} />
-    <Container>PORTFOLIO</Container>
+    <Portfolio even={true} />
     <Form even={false} />
   </div>
 );
