@@ -5,11 +5,11 @@ import MainContainer from "./SectionContainer";
 
 const TitleSection = ({ even }) => (
   <section>
-    <MainContainer even={even}>
-      <Typography variant="h1" style={{ textAlign: "center" }}>
+    <MainContainer transparent style={{ paddingTop: 100, paddingBottom: 100 }}>
+      <Typography variant="h1" style={{ textAlign: "center", marginBottom: 30}}>
         גדנ"ע עוקץ 2019
       </Typography>
-      <Typography variant="h4">ההרשמה פתוחה</Typography>
+      <Typography variant="h4" style={{marginBottom: 30}}>ההרשמה פתוחה</Typography>
       <Button variant="contained" color="primary">
         הרשמה
       </Button>

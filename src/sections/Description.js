@@ -2,11 +2,12 @@ import { Typography } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import React from "react";
 import MainContainer from "../SectionContainer";
+import SectionTitle from "../SectionTitle";
 
 export default ({ even }) => (
   <section>
     <MainContainer even={even}>
-      <Typography variant="h3" style={{marginTop: 5, marginBottom: 30}}>תיאור הגדנ"ע</Typography>
+      <SectionTitle>תיאור הגדנ"ע</SectionTitle>
       <Typography variant="body1">
         במהלך הגדנ"ע תזכו להנות מהזדמנות חד פעמית להציץ לעולמה של יחידה מיוחדת
         המשלבת לוחמה עם כלבים במהלך הגדנ"ע יתקיימו תצוגות תכלית של לוחמי וכלבי
@@ -16,7 +17,7 @@ export default ({ even }) => (
         מותנה בנתוניך האישיים והרפואיים שנקבעו לך בצו הראשון ההרשמה לגדנ"ע תיפתח
         לתלמידי כיתה י"א באפריל 2019
       </Typography>
-      <Button variant="contained" color="primary">
+      <Button variant="contained" color="primary" style={{ marginTop: 30 }}>
         לטופס ההרשמה
       </Button>
     </MainContainer>
