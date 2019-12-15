@@ -1,8 +1,5 @@
 import Container from "@material-ui/core/Container";
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import bg1 from "./images/k9/1.jpeg";
-import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 import TitleSection from "./TitleSection";
 import DescriptionSection from "./sections/Description";
 import Requirements from "./sections/Requirements";
@@ -10,6 +7,10 @@ import Dates from "./sections/Dates";
 import QuestionsAndAnswers from "./sections/QuestionsAndAnswers";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Form from "./sections/Form";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import BackgroundCarousel from "./CarouselBackground";
 
 const useStyles = makeStyles({
   root: {
@@ -25,18 +26,7 @@ const useStyles = makeStyles({
 
 const Body = () => (
   <div style={{ textAlign: "center" }}>
-    <Carousel showThumbs={false} showIndicators={false}>
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          zIndex: 0,
-          backgroundImage: `url(${bg1})`
-        }}
-      />
-    </Carousel>
+    <BackgroundCarousel />
     <Container style={{ minHeight: 600 }}>VIDEO</Container>
     <TitleSection />
     <DescriptionSection even={true} />
