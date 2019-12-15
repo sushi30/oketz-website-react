@@ -1,6 +1,4 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 import bg1 from "./images/k9/1.jpeg";
 import bg4 from "./images/k9/4.jpeg";
 import bg6 from "./images/k9/6.jpeg";
@@ -10,6 +8,8 @@ import bg6m from "./images/k9/6m.jpeg";
 import Slider from "react-slick/lib";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const useStyles = makeStyles({
   slide: {
