@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 const Body = () => (
   <div style={{ textAlign: "center" }}>
     <BackgroundCarousel />
-    <Container style={{ minHeight: 600 }}>VIDEO</Container>
+    <Container style={{ minHeight: 200 }}>VIDEO</Container>
     <TitleSection />
     <DescriptionSection even={true} />
     <Dates even={false} />
