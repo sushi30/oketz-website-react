@@ -1,4 +1,3 @@
-import Container from "@material-ui/core/Container";
 import React from "react";
 import TitleSection from "./TitleSection";
 import DescriptionSection from "./sections/Description";
@@ -8,7 +7,8 @@ import QuestionsAndAnswers from "./sections/QuestionsAndAnswers";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Form from "./sections/Form";
 import BackgroundCarousel from "./CarouselBackground";
-import Portfolio from "./sections/Portfolio";
+import Portfolio from "./sections/Portfolio/Portfolio";
+import Video from "./Video";
 
 const useStyles = makeStyles({
   root: {
@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 const Body = () => (
   <div style={{ textAlign: "center" }}>
     <BackgroundCarousel />
-    <Container style={{ minHeight: 200 }}>VIDEO</Container>
+    <Video />
     <TitleSection />
     <DescriptionSection even={true} />
     <Dates even={false} />
