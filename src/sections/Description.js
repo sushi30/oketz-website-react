@@ -6,6 +6,9 @@ import SectionTitle from "../SectionTitle";
 import Section from "../components/Section";
 import Divider from "@material-ui/core/Divider";
 import MyDivider from "../components/MyDivider";
+import StyledButton from "../components/CallToAction";
+import withStyles from "@material-ui/core/styles/withStyles";
+import { blueGrey } from "@material-ui/core/colors";
 
 const lines = [
   'במהלך הגדנ"ע תזכו להנות מהזדמנות חד פעמית להציץ לעולמה של יחידה מיוחדתהמשלבת לוחמה עם כלבים',
@@ -16,6 +19,13 @@ const lines = [
   'ההרשמה לגדנ"ע תיפתח לתלמידי כיתה י"א באפריל 2020'
 ];
 
+const CallToAction = withStyles(theme => ({
+  root: {
+    background: blueGrey[50]
+  },
+  label: { color: theme.palette.text.primary }
+}))(StyledButton);
+
 export default ({ even, action }) => (
   <Section even={even}>
     <MainContainer even={even}>
@@ -24,14 +34,8 @@ export default ({ even, action }) => (
       {lines.map(line => (
         <Typography variant="subtitle1">{line}</Typography>
       ))}
-      <Button
-        variant="contained"
-        color="primary"
-        style={{ marginTop: 30 }}
-        onClick={action}
-      >
-        לטופס ההרשמה
-      </Button>
+      <MyDivider />
+      <CallToAction onClick={action}>לטופס ההרשמה</CallToAction>
     </MainContainer>
   </Section>
 );

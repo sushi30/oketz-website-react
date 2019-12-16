@@ -1,7 +1,7 @@
 import { Typography } from "@material-ui/core";
-import Button from "@material-ui/core/Button";
 import React from "react";
 import MainContainer from "./SectionContainer";
+import StyledButton from "./components/CallToAction";
 
 const TitleSection = ({ action }) => (
   <section>
@@ -40,9 +40,7 @@ const TitleSection = ({ action }) => (
       >
         ההרשמה פתוחה
       </Typography>
-      <Button onClick={action} variant="contained" color="primary">
-        הרשמה
-      </Button>
+      <StyledButton onClick={action}>הרשמו עכשיו</StyledButton>
     </MainContainer>
   </section>
 );

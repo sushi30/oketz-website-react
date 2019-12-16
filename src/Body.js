@@ -28,7 +28,7 @@ const Body = () => (
     <QuestionsAndAnswers even={false} />
     <Portfolio even={true} />
     <Element name="form">
-      <Form even={false} />
+      <Form even={true} />
     </Element>
   </div>
 );
