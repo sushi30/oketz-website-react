@@ -9,11 +9,13 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MainContainer from "../SectionContainer";
 import Section from "../components/Section";
 import SectionTitle from "../SectionTitle";
+import MyDivider from "../components/MyDivider";
 
 export default ({ even }) => (
   <Section even={even}>
     <MainContainer even={even}>
       <SectionTitle>תאריכי הגדנ"ע</SectionTitle>
+      <MyDivider />
       <Container style={{ maxWidth: 200 }}>
         <List>
           <ListItem>

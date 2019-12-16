@@ -3,11 +3,13 @@ import React from "react";
 import MainContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
 import Section from "../components/Section";
+import MyDivider from "../components/MyDivider";
 
 export default ({ even }) => (
   <Section even={even}>
     <MainContainer even={even}>
       <SectionTitle>שאלות ותשובות</SectionTitle>
+      <MyDivider />
       <Typography variant="subtitle1">מי מזמן אותי לגיבוש?</Typography>
       <Typography variant="subtitle2">מיטב</Typography>
       <Typography variant="subtitle1">

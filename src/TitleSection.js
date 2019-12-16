@@ -21,12 +21,23 @@ const TitleSection = ({ even }) => (
           color: "white",
           "-webkit-text-stroke-width": "0.5px",
           "-webkit-text-stroke-color": "black",
-          "text-shadow": "2px 2px 5px black"
+          "text-shadow": "2px 2px 5px black",
+          fontWeight: 510
         }}
       >
         גדנ"ע עוקץ 2019
       </Typography>
-      <Typography variant="h4" style={{ marginBottom: 30 }}>
+      <Typography
+        variant="h4"
+        style={{
+          marginBottom: 30,
+          color: "white",
+          "-webkit-text-stroke-width": "0.5px",
+          "-webkit-text-stroke-color": "black",
+          "text-shadow": "2px 2px 5px black",
+          fontWeight: 400
+        }}
+      >
         ההרשמה פתוחה
       </Typography>
       <Button variant="contained" color="primary">

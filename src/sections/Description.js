@@ -5,6 +5,7 @@ import MainContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
 import Section from "../components/Section";
 import Divider from "@material-ui/core/Divider";
+import MyDivider from "../components/MyDivider";
 
 const lines = [
   'במהלך הגדנ"ע תזכו להנות מהזדמנות חד פעמית להציץ לעולמה של יחידה מיוחדתהמשלבת לוחמה עם כלבים',
@@ -19,7 +20,7 @@ export default ({ even }) => (
   <Section even={even}>
     <MainContainer even={even}>
       <SectionTitle>תיאור הגדנ"ע</SectionTitle>
-      <Divider variant="middle" component="div" style={{marginLeft: 320, marginRight: 320, marginBottom: 24}}/>
+      <MyDivider />
       {lines.map(line => (
         <Typography variant="subtitle1">{line}</Typography>
       ))}

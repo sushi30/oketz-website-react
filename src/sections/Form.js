@@ -12,6 +12,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Button from "@material-ui/core/Button";
 import Section from "../components/Section";
+import SectionTitle from "../SectionTitle";
+import MyDivider from "../components/MyDivider";
 
 const useStyles = makeStyles({
   formControl: { left: "unset" },
@@ -41,7 +43,8 @@ export default ({ even }) => {
   return (
     <Section even={even}>
       <MainContainer even={even}>
-        <Typography variant="h3">טופס הרשמה</Typography>
+        <SectionTitle>טופס הרשמה</SectionTitle>
+        <MyDivider />
         <Formik
           onSubmit={({ values }) => {
             console.log(values);
