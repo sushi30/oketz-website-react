@@ -3,11 +3,9 @@ import Container from "@material-ui/core/Container";
 import React from "react";
 
 export default styled(({ even, ...rest }) => (
-  <Container {...rest} maxWidth="xl" />
+  <Container maxWidth="md" {...rest} />
 ))({
-  background: props =>
-    props.transparent ? "unset" : props.even ? "red" : "white",
   color: props => (props.even ? "white" : "black"),
-  paddingTop: 20,
-  paddingBottom: 20
+  paddingTop: props => (props.noPadding ? 0 : 32),
+  paddingBottom: props => (props.noPadding ? 0 : 32)
 });

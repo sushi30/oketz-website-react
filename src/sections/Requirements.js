@@ -3,9 +3,10 @@ import Container from "@material-ui/core/Container";
 import React from "react";
 import MainContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
+import Section from "../components/Section";
 
 export default ({ even }) => (
-  <section>
+  <Section even={even}>
     <MainContainer even={even}>
       <SectionTitle variant="h3">תנאי קבלה</SectionTitle>
       <Typography variant="p">
@@ -16,5 +17,5 @@ export default ({ even }) => (
         עמידה מול קהל מקומך איתנו
       </Typography>
     </MainContainer>
-  </section>
+  </Section>
 );

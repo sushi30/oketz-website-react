@@ -11,6 +11,7 @@ import Radio from "@material-ui/core/Radio";
 import MenuItem from "@material-ui/core/MenuItem";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Button from "@material-ui/core/Button";
+import Section from "../components/Section";
 
 const useStyles = makeStyles({
   formControl: { left: "unset" },
@@ -38,7 +39,7 @@ const MyGridItem = ({ children }) => (
 export default ({ even }) => {
   const classes = useStyles();
   return (
-    <section>
+    <Section even={even}>
       <MainContainer even={even}>
         <Typography variant="h3">טופס הרשמה</Typography>
         <Formik
@@ -162,6 +163,6 @@ export default ({ even }) => {
           )}
         />
       </MainContainer>
-    </section>
+    </Section>
   );
 };

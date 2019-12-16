@@ -7,9 +7,10 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import CalendarIcon from "@material-ui/icons/CalendarToday";
 import ListItemText from "@material-ui/core/ListItemText";
 import MainContainer from "../SectionContainer";
+import Section from "../components/Section";
 
 export default ({ even }) => (
-  <section>
+  <Section even={even}>
     <MainContainer even={even}>
       <Typography variant="h3">תאריכי הגדנ"ע</Typography>
       <Container style={{ maxWidth: 200 }}>
@@ -37,5 +38,5 @@ export default ({ even }) => (
         </List>
       </Container>
     </MainContainer>
-  </section>
+  </Section>
 );

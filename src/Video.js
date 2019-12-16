@@ -12,12 +12,15 @@ const Video = () => {
   return (
     <Container maxWidth="xl" className={classes.container}>
       <video
-        src={"vid/gadna-oketz-video.mp4"}
+        src="vid/gadna-oketz-video.mp4"
+        className={classes.video}
+        controls
         autoPlay
         muted
-        controls
-        className={classes.video}
-      />
+      >
+        <source type="video/mp4" />
+        הדפדפן שלך אינו תומך בהצגת תוכן וידאו.
+      </video>
     </Container>
   );
 };

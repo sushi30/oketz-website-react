@@ -2,9 +2,10 @@ import { Typography } from "@material-ui/core";
 import React from "react";
 import MainContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
+import Section from "../components/Section";
 
 export default ({ even }) => (
-  <section>
+  <Section even={even}>
     <MainContainer even={even}>
       <SectionTitle>שאלות ותשובות</SectionTitle>
       <Typography variant="subtitle1">מי מזמן אותי לגיבוש?</Typography>
@@ -22,5 +23,5 @@ export default ({ even }) => (
         היית צריך לעשות את הגיבוש בשנה שעברה, מקרים פרטניים יעברו לבחינה של מיטב
       </Typography>
     </MainContainer>
-  </section>
+  </Section>
 );

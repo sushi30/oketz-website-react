@@ -3,9 +3,10 @@ import Button from "@material-ui/core/Button";
 import React from "react";
 import MainContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
+import Section from "../components/Section";
 
 export default ({ even }) => (
-  <section>
+  <Section even={even}>
     <MainContainer even={even}>
       <SectionTitle>תיאור הגדנ"ע</SectionTitle>
       <Typography variant="body1">
@@ -21,5 +22,5 @@ export default ({ even }) => (
         לטופס ההרשמה
       </Button>
     </MainContainer>
-  </section>
+  </Section>
 );
