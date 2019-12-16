@@ -3,7 +3,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 
 export default styled(({ even, transparent, ...rest }) => (
-  <Typography {...rest} variant="h3" s />
+  <Typography {...rest} variant="h4" s />
 ))({
-  marginBottom: 30
+  marginBottom: 8
 });

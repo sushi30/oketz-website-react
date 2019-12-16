@@ -1,15 +1,17 @@
 import React from "react";
 import Body from "./Body";
-
-
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "./Theme";
 
 function App() {
   return (
+    <body dir="rtl">
       <div className="App">
-      <body dir="rtl">
-        <Body />
-      </body>
-    </div>
+        <ThemeProvider theme={theme}>
+          <Body />
+        </ThemeProvider>
+      </div>
+    </body>
   );
 }
 

@@ -5,7 +5,7 @@ import React from "react";
 export default styled(({ even, ...rest }) => (
   <Container maxWidth="md" {...rest} />
 ))({
-  color: props => (props.even ? "white" : "black"),
+  color: "black",
   paddingTop: props => (props.noPadding ? 0 : 32),
   paddingBottom: props => (props.noPadding ? 0 : 32)
 });

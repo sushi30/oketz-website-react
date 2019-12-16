@@ -5,7 +5,14 @@ import MainContainer from "./SectionContainer";
 
 const TitleSection = ({ even }) => (
   <section>
-    <MainContainer transparent style={{ paddingTop: 100, paddingBottom: 100 }}>
+    <MainContainer
+      transparent
+      style={{
+        paddingTop: "25vh",
+        minHeight: "95vh",
+        verticalAlign: "middle"
+      }}
+    >
       <Typography
         variant="h1"
         style={{

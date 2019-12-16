@@ -4,7 +4,6 @@ import DescriptionSection from "./sections/Description";
 import Requirements from "./sections/Requirements";
 import Dates from "./sections/Dates";
 import QuestionsAndAnswers from "./sections/QuestionsAndAnswers";
-import makeStyles from "@material-ui/core/styles/makeStyles";
 import Form from "./sections/Form";
 import BackgroundCarousel from "./CarouselBackground";
 import Portfolio from "./sections/Portfolio/Portfolio";

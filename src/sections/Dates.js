@@ -8,11 +8,12 @@ import CalendarIcon from "@material-ui/icons/CalendarToday";
 import ListItemText from "@material-ui/core/ListItemText";
 import MainContainer from "../SectionContainer";
 import Section from "../components/Section";
+import SectionTitle from "../SectionTitle";
 
 export default ({ even }) => (
   <Section even={even}>
     <MainContainer even={even}>
-      <Typography variant="h3">תאריכי הגדנ"ע</Typography>
+      <SectionTitle>תאריכי הגדנ"ע</SectionTitle>
       <Container style={{ maxWidth: 200 }}>
         <List>
           <ListItem>

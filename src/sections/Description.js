@@ -4,20 +4,25 @@ import React from "react";
 import MainContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
 import Section from "../components/Section";
+import Divider from "@material-ui/core/Divider";
+
+const lines = [
+  'במהלך הגדנ"ע תזכו להנות מהזדמנות חד פעמית להציץ לעולמה של יחידה מיוחדתהמשלבת לוחמה עם כלבים',
+  'במהלך הגדנ"ע יתקיימו תצוגות תכלית של לוחמי וכלבי היחידה',
+  'העוברים בהצלחה את הגדנ"ע יזכו לקבל זימון לגיבוש מלש"ב ליחידה שיתקיים במרץ 2021',
+  'ותעברו בהצלחה את גיבוש המלש"ב ליחידה, יובטח לכם שיבוץ על פי תנאי התאמתכם מקום בפתיחת מסלול לוחם עוקץ',
+  "שים לב, זימונך לגיבוש מותנה בנתוניך האישיים והרפואיים שנקבעו לך בצו הראשון",
+  'ההרשמה לגדנ"ע תיפתח לתלמידי כיתה י"א באפריל 2020'
+];
 
 export default ({ even }) => (
   <Section even={even}>
     <MainContainer even={even}>
       <SectionTitle>תיאור הגדנ"ע</SectionTitle>
-      <Typography variant="body1">
-        במהלך הגדנ"ע תזכו להנות מהזדמנות חד פעמית להציץ לעולמה של יחידה מיוחדת
-        המשלבת לוחמה עם כלבים במהלך הגדנ"ע יתקיימו תצוגות תכלית של לוחמי וכלבי
-        היחידה העוברים בהצלחה את הגדנ"ע יזכו לקבל זימון לגיבוש מלש"ב ליחידה -
-        שיתקיים במרץ 2020 במידה ותעברו בהצלחה את גיבוש המלש"ב ליחידה, יובטח לכם
-        על פי תנאי התאמתכם מקום בפתיחת מסלול לוחם עוקץ שים לב, זימונך לגיבוש
-        מותנה בנתוניך האישיים והרפואיים שנקבעו לך בצו הראשון ההרשמה לגדנ"ע תיפתח
-        לתלמידי כיתה י"א באפריל 2019
-      </Typography>
+      <Divider variant="middle" component="div" style={{marginLeft: 320, marginRight: 320, marginBottom: 24}}/>
+      {lines.map(line => (
+        <Typography variant="subtitle1">{line}</Typography>
+      ))}
       <Button variant="contained" color="primary" style={{ marginTop: 30 }}>
         לטופס ההרשמה
       </Button>
