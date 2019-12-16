@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 import React from "react";
 import MainContainer from "./SectionContainer";
 
-const TitleSection = ({ even }) => (
+const TitleSection = ({ action }) => (
   <section>
     <MainContainer
       transparent
@@ -40,7 +40,7 @@ const TitleSection = ({ even }) => (
       >
         ההרשמה פתוחה
       </Typography>
-      <Button variant="contained" color="primary">
+      <Button onClick={action} variant="contained" color="primary">
         הרשמה
       </Button>
     </MainContainer>

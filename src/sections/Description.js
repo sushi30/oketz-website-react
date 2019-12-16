@@ -16,7 +16,7 @@ const lines = [
   'ההרשמה לגדנ"ע תיפתח לתלמידי כיתה י"א באפריל 2020'
 ];
 
-export default ({ even }) => (
+export default ({ even, action }) => (
   <Section even={even}>
     <MainContainer even={even}>
       <SectionTitle>תיאור הגדנ"ע</SectionTitle>
@@ -24,7 +24,12 @@ export default ({ even }) => (
       {lines.map(line => (
         <Typography variant="subtitle1">{line}</Typography>
       ))}
-      <Button variant="contained" color="primary" style={{ marginTop: 30 }}>
+      <Button
+        variant="contained"
+        color="primary"
+        style={{ marginTop: 30 }}
+        onClick={action}
+      >
         לטופס ההרשמה
       </Button>
     </MainContainer>
