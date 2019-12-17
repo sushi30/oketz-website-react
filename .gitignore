@@ -1,4 +1,5 @@
 .idea
+.env
 
 # video folder. too large for git.
 public/vid

@@ -9,6 +9,7 @@ import BackgroundCarousel from "./CarouselBackground";
 import Portfolio from "./sections/Portfolio/Portfolio";
 import Video from "./Video";
 import Scroller, { Element } from "react-scroll";
+import * as API from "./API";
 
 const callToAction = () =>
   Scroller.scroller.scrollTo("form", {
@@ -16,6 +17,9 @@ const callToAction = () =>
     delay: 50,
     smooth: true
   });
+
+const handleSubmitSuccess = () => {};
+const handleSubmitError = () => {};
 
 const Body = () => (
   <div style={{ textAlign: "center" }}>
@@ -28,7 +32,12 @@ const Body = () => (
     <QuestionsAndAnswers even={false} />
     <Portfolio even={true} />
     <Element name="form">
-      <Form even={true} />
+      <Form
+        even={true}
+        handleSubmit={API.submitForm}
+        handleSubmitError={handleSubmitError}
+        handleSubmitSuccess={handleSubmitSuccess}
+      />
     </Element>
   </div>
 );

@@ -15,6 +15,7 @@ import Section from "../components/Section";
 import SectionTitle from "../SectionTitle";
 import MyDivider from "../components/MyDivider";
 import StyledButton from "../components/CallToAction";
+import { submitForm } from "../API";
 
 const useStyles = makeStyles({
   formControl: { left: "unset", right: 18 },
@@ -40,7 +41,12 @@ const MyGridItem = ({ children }) => (
   </Grid>
 );
 
-export default ({ even }) => {
+export default ({
+  even,
+  handleSubmit,
+  handleSubmitError,
+  handleSubmitSuccess
+}) => {
   const classes = useStyles();
   return (
     <Section even={even}>
@@ -48,9 +54,15 @@ export default ({ even }) => {
         <SectionTitle>טופס הרשמה</SectionTitle>
         <MyDivider />
         <Formik
-          onSubmit={({ values }) => {
-            alert("עוד לא עובד");
-            console.log(values);
+          onSubmit={async ({ values, actions }) => {
+            actions.setSubmitting(true);
+            await handleSubmit(values)
+              .catch(e => {
+                console.log(e);
+                handleSubmitError(e);
+              })
+              .then(res => handleSubmitSuccess(res))
+              .finally(() => actions.setSubmitting(false));
           }}
           render={() => (
             <Form>
