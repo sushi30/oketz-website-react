@@ -14,6 +14,7 @@ import Button from "@material-ui/core/Button";
 import Section from "../components/Section";
 import SectionTitle from "../SectionTitle";
 import MyDivider from "../components/MyDivider";
+import StyledButton from "../components/CallToAction";
 
 const useStyles = makeStyles({
   formControl: { left: "unset", right: 18 },
@@ -48,6 +49,7 @@ export default ({ even }) => {
         <MyDivider />
         <Formik
           onSubmit={({ values }) => {
+            alert("עוד לא עובד");
             console.log(values);
           }}
           render={() => (
@@ -160,9 +162,9 @@ export default ({ even }) => {
                   />
                 </MyGridItem>
               </Grid>
-              <Button type="submit" variant="contained" color="primary">
+              <StyledButton type="submit" variant="contained" color="primary">
                 שלח
-              </Button>
+              </StyledButton>
             </Form>
           )}
         />
