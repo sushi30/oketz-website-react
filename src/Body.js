@@ -1,5 +1,5 @@
 import React from "react";
-import TitleSection from "./TitleSection";
+import Title from "./sections/Title";
 import DescriptionSection from "./sections/Description";
 import Requirements from "./sections/Requirements";
 import Dates from "./sections/Dates";
@@ -21,7 +21,7 @@ const Body = () => (
   <div style={{ textAlign: "center" }}>
     <BackgroundCarousel />
     <Video />
-    <TitleSection action={callToAction} />
+    <Title action={callToAction} />
     <DescriptionSection even={true} action={callToAction} />
     <Dates even={false} />
     <Requirements even={true} />

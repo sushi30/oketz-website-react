@@ -16,24 +16,25 @@ import SectionTitle from "../SectionTitle";
 import MyDivider from "../components/MyDivider";
 
 const useStyles = makeStyles({
-  formControl: { left: "unset" },
+  formControl: { left: "unset", right: 18 },
   icon: { position: "unset" }
 });
 
 const MyTextField = props => (
   <TextField
-    {...props.field}
+    margin="normal"
+    fullWidth
     InputLabelProps={{
       classes: { formControl: props.classes.formControl }
     }}
+    variant="outlined"
+    {...props.field}
     {...props}
-    margin="normal"
-    fullWidth
   />
 );
 
 const MyGridItem = ({ children }) => (
-  <Grid item xs={6} style={{ paddingLeft: 20, paddingRight: 20 }}>
+  <Grid item xs={12} md={6} style={{ paddingLeft: 20, paddingRight: 20 }}>
     {children}
   </Grid>
 );

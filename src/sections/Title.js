@@ -1,9 +1,9 @@
 import { Typography } from "@material-ui/core";
 import React from "react";
-import MainContainer from "./SectionContainer";
-import StyledButton from "./components/CallToAction";
+import MainContainer from "../SectionContainer";
+import StyledButton from "../components/CallToAction";
 
-const TitleSection = ({ action }) => (
+const Title = ({ action }) => (
   <section>
     <MainContainer
       transparent
@@ -45,4 +45,4 @@ const TitleSection = ({ action }) => (
   </section>
 );
 
-export default TitleSection;
+export default Title;
