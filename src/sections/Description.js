@@ -1,10 +1,8 @@
 import { Typography } from "@material-ui/core";
-import Button from "@material-ui/core/Button";
 import React from "react";
 import MainContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
 import Section from "../components/Section";
-import Divider from "@material-ui/core/Divider";
 import MyDivider from "../components/MyDivider";
 import StyledButton from "../components/CallToAction";
 import withStyles from "@material-ui/core/styles/withStyles";

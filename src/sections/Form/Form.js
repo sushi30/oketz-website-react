@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 import React from "react";
-import MainContainer from "../SectionContainer";
+import MainContainer from "../../SectionContainer";
 import TextField from "@material-ui/core/TextField";
 import { Field, Form, Formik } from "formik";
 import Grid from "@material-ui/core/Grid";
@@ -10,10 +10,12 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 import MenuItem from "@material-ui/core/MenuItem";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import Section from "../components/Section";
-import SectionTitle from "../SectionTitle";
-import MyDivider from "../components/MyDivider";
-import StyledButton from "../components/CallToAction";
+import Section from "../../components/Section";
+import SectionTitle from "../../SectionTitle";
+import MyDivider from "../../components/MyDivider";
+import StyledButton from "../../components/CallToAction";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import validation from "./validation";
 
 const useStyles = makeStyles(theme => ({
   inputLabelRoot: {
@@ -25,7 +27,19 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.primary[800]
   },
   icon: { position: "unset" },
-  radioLabel: { color: theme.palette.text.primary }
+  radioLabel: { color: theme.palette.text.primary },
+  buttonProgress: {
+    color: theme.palette.secondary[100],
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    marginTop: -12,
+    marginLeft: -12
+  },
+  wrapper: {
+    margin: theme.spacing(1),
+    position: "relative"
+  }
 }));
 
 const MyTextField = props => (
@@ -64,24 +78,25 @@ export default ({
         <SectionTitle>טופס הרשמה</SectionTitle>
         <MyDivider />
         <Formik
+          validationSchema={validation}
           onSubmit={async (values, actions) => {
             actions.setSubmitting(true);
             await handleSubmit(values)
+              .then(res => handleSubmitSuccess(res))
               .catch(e => {
                 console.log(e);
                 handleSubmitError(e);
               })
-              .then(res => handleSubmitSuccess(res))
               .finally(() => actions.setSubmitting(false));
           }}
-          render={() => (
+          render={({ isSubmitting }) => (
             <Form>
               <Grid container>
                 <MyGridItem>
                   <Field
                     name="name"
                     render={({ field }) => (
-                      <MyTextField {...field} classes={classes} label="שם" />
+                      <MyTextField {...field} classes={classes} label="שם מלא" />
                     )}
                   />
                 </MyGridItem>
@@ -192,9 +207,22 @@ export default ({
                   />
                 </MyGridItem>
               </Grid>
-              <StyledButton type="submit" variant="contained" color="primary">
-                שלח
-              </StyledButton>
+              <div className={classes.wrapper}>
+                <StyledButton
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  disabled={isSubmitting}
+                >
+                  שלח
+                </StyledButton>
+                {isSubmitting && (
+                  <CircularProgress
+                    size={24}
+                    className={classes.buttonProgress}
+                  />
+                )}
+              </div>
             </Form>
           )}
         />
