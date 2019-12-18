@@ -10,24 +10,34 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 import MenuItem from "@material-ui/core/MenuItem";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import Button from "@material-ui/core/Button";
 import Section from "../components/Section";
 import SectionTitle from "../SectionTitle";
 import MyDivider from "../components/MyDivider";
 import StyledButton from "../components/CallToAction";
-import { submitForm } from "../API";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
+  inputLabelRoot: {
+    color: theme.palette.text.primary
+  },
   formControl: { left: "unset", right: 18 },
-  icon: { position: "unset" }
-});
+  input: {
+    backgroundColor: theme.palette.secondary[50],
+    color: theme.palette.text.primary[800]
+  },
+  icon: { position: "unset" },
+  radioLabel: { color: theme.palette.text.primary }
+}));
 
 const MyTextField = props => (
   <TextField
+    className={props.classes.input}
     margin="normal"
     fullWidth
     InputLabelProps={{
-      classes: { formControl: props.classes.formControl }
+      classes: {
+        formControl: props.classes.formControl,
+        root: props.classes.inputLabelRoot
+      }
     }}
     variant="outlined"
     {...props.field}
@@ -54,7 +64,7 @@ export default ({
         <SectionTitle>טופס הרשמה</SectionTitle>
         <MyDivider />
         <Formik
-          onSubmit={async ({ values, actions }) => {
+          onSubmit={async (values, actions) => {
             actions.setSubmitting(true);
             await handleSubmit(values)
               .catch(e => {
@@ -120,7 +130,11 @@ export default ({
                         }}
                       >
                         <div>
-                          <Typography color="textSecondary" component="legend">
+                          <Typography
+                            color="textSecondary"
+                            component="legend"
+                            className={classes.radioLabel}
+                          >
                             מין
                           </Typography>
                         </div>
@@ -150,8 +164,12 @@ export default ({
                     render={({ field }) => (
                       <TextField
                         InputLabelProps={{
-                          classes: { formControl: classes.formControl }
+                          classes: {
+                            formControl: classes.formControl,
+                            root: classes.inputLabelRoot
+                          }
                         }}
+                        className={classes.input}
                         {...field}
                         select
                         SelectProps={{

@@ -44,13 +44,6 @@ const BackgroundCarousel = () => {
     autoplaySpeed: 3000,
     cssEase: "linear"
   };
-  const slideSettings = {
-    height: "100vh",
-    width: "100%",
-    zIndex: 0,
-    backgroundPosition: "center center",
-    backgroundSize: "cover"
-  };
   const classes = useStyles();
   return (
     <div

@@ -11,6 +11,8 @@ import Video from "./Video";
 import Scroller, { Element } from "react-scroll";
 import * as API from "./API";
 import IntroDialog from "./dialogs/IntroDialog";
+import SubmitSuccessDialog from "./dialogs/SubmitSuccessDialog";
+import ErrorDialog from "./dialogs/ErrorDialog";
 
 const callToAction = () =>
   Scroller.scroller.scrollTo("form", {
@@ -19,16 +21,27 @@ const callToAction = () =>
     smooth: true
   });
 
-const handleSubmitSuccess = () => {};
-const handleSubmitError = () => {};
-
 const Body = () => {
-  const [introDialogOpen, setIntroDialogOpen] = useState(true);
+  const [introDialogOpen, setIntroDialogOpen] = useState(false);
+  const [successDialogOpen, setSuccessDialogOpen] = useState(false);
+  const [errorDialogOpen, setErrorDialogOpen] = useState(false);
+
+  const handleSubmitSuccess = () => setSuccessDialogOpen(true);
+  const handleSubmitError = () => setErrorDialogOpen(true);
+
   return (
     <div style={{ textAlign: "center" }}>
       <IntroDialog
         open={introDialogOpen}
         handleClose={() => setIntroDialogOpen(false)}
+      />
+      <SubmitSuccessDialog
+        open={successDialogOpen}
+        handleClose={() => setSuccessDialogOpen(false)}
+      />
+      <ErrorDialog
+        open={errorDialogOpen}
+        handleClose={() => setErrorDialogOpen(false)}
       />
       <BackgroundCarousel />
       <Video />
