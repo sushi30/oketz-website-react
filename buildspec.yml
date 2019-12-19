@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+  build:
+    commands:
+      - npm install
+      - npm run build
+  post_build:
+    commands:
+      - aws s3 sync s3://gadna.media2 $TARGET_BUCKET
+      - aws s3 sync build $TARGET_BUCKET
+
+cache:
+  paths:
+    - node_modules/**/*
