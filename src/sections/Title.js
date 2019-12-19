@@ -5,12 +5,12 @@ import StyledButton from "../components/CallToAction";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    paddingTop: "25vh",
+    minHeight: "95vh",
+    verticalAlign: "middle"
+  },
   title: {
-    root: {
-      paddingTop: "25vh",
-      minHeight: "95vh",
-      verticalAlign: "middle"
-    },
     textAlign: "center",
     marginBottom: 30,
     color: "white",
