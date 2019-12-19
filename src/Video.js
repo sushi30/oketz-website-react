@@ -3,7 +3,7 @@ import React from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
 const useStyles = makeStyles({
-  container: { width: "100%", paddingLeft: 0, paddingRight: 0 },
+  container: { width: "100%", paddingLeft: 0, paddingRight: 0, marginTop: 100 },
   video: { width: "100%" }
 });
 
