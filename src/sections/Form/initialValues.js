@@ -6,5 +6,6 @@ export default {
   tel: "",
   id: "",
   grade: 0,
-  gender: ""
+  gender: "",
+  gapYear: false
 };

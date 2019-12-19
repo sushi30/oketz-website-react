@@ -17,8 +17,8 @@ import StyledButton from "../../components/CallToAction";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import validation from "./validation";
 import initialValues from "./initialValues";
-import { red } from "@material-ui/core/colors";
 import FormHelperText from "@material-ui/core/FormHelperText";
+import Checkbox from "@material-ui/core/Checkbox";
 
 const useStyles = makeStyles(theme => ({
   inputLabelRoot: {
@@ -42,6 +42,11 @@ const useStyles = makeStyles(theme => ({
   wrapper: {
     margin: theme.spacing(1),
     position: "relative"
+  },
+  section: {
+    "@media (max-width: 800px)": {
+      marginBottom: theme.spacing(2)
+    }
   }
 }));
 
@@ -90,7 +95,7 @@ export default ({
   const classes = useStyles();
   helperTextStyles();
   return (
-    <Section even={even}>
+    <Section even={even} className={classes.section}>
       <MainContainer even={even}>
         <SectionTitle>טופס הרשמה</SectionTitle>
         <MyDivider />
@@ -262,6 +267,24 @@ export default ({
                             </MenuItem>
                           ))}
                         </TextField>
+                      )}
+                    />
+                  </MyGridItem>
+                  <MyGridItem>
+                    <Field
+                      name="gapYear"
+                      render={({ field }) => (
+                        <div>
+                          <FormControlLabel
+                            {...field}
+                            {...errorMessage(field.name)}
+                            disabled={isSubmitting}
+                            component="fieldset"
+                            variant="outlined"
+                            control={<Checkbox {...field} color="primary" />}
+                            label="מתכנן להצע שנת שירות"
+                          />
+                        </div>
                       )}
                     />
                   </MyGridItem>
