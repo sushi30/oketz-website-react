@@ -4,4 +4,5 @@ const timeout = async ms => {
 
 export const submitForm = async data => {
   await timeout(2000);
+  return !!window.fail;
 };
