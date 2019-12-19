@@ -1,5 +1,5 @@
 export function validateId(id) {
-  if (id.length !== 9 || isNaN(Number.parseInt(id))) {
+  if (!id || isNaN(Number.parseInt(id) || id.length !== 9)) {
     return false;
   }
   let sum = 0;

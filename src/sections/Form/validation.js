@@ -23,7 +23,7 @@ export default Yup.object().shape({
     .oneOf([11, 12], "שדה חובה")
     .required("שדה חובה"),
   gender: Yup.string()
-    .oneOf(["m", "f"], "שדה חובה")
+    .oneOf(["male", "female"], "שדה חובה")
     .required("שדה חובה"),
   gapYear: Yup.boolean()
 });

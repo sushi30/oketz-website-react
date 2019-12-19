@@ -112,8 +112,8 @@ export default ({
               })
               .finally(() => actions.setSubmitting(false));
           }}
-          render={({ isSubmitting, errors, touched }) => {
-            console.log({ errors: errors, touched: touched });
+          render={({ isSubmitting, errors, touched, values }) => {
+            console.log({ errors: errors, touched: touched, values });
             const errorMessage = k => ({
               error: touched[k] && errors[k],
               helperText: touched[k] && errors[k]
