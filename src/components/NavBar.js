@@ -43,7 +43,6 @@ export default function NavBar() {
             className={classes.image}
             onClick={() => scroll.scrollToTop({ duration: 500 })}
           />
-          <NavItem to="conditions" text="תנאים" />
           <NavItem to="form" text="רישום" />
         </Toolbar>
       </AppBar>

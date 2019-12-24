@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Title from "./sections/Title";
 import DescriptionSection from "./sections/Description";
-import Requirements from "./sections/Requirements";
 import Dates from "./sections/Dates";
 import QuestionsAndAnswers from "./sections/QuestionsAndAnswers";
 import Form from "./sections/Form";
@@ -53,8 +52,7 @@ const Body = () => {
       <Title action={callToAction} />
       <DescriptionSection even={true} action={callToAction} />
       <Dates even={false} />
-      <Requirements even={true} />
-      <QuestionsAndAnswers even={false} />
+      <QuestionsAndAnswers even={true} />
       <Portfolio even={true} />
       <Element name="form">
         {hideForm ? (
