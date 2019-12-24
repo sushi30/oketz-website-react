@@ -8,15 +8,6 @@ import StyledButton from "../components/CallToAction";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { blueGrey } from "@material-ui/core/colors";
 
-const lines = [
-  'במהלך הגדנ"ע תזכו להנות מהזדמנות חד פעמית להציץ לעולמה של יחידה מיוחדת המשלבת לוחמה עם כלבים',
-  'במהלך הגדנ"ע יתקיימו תצוגות תכלית של לוחמי וכלבי היחידה',
-  'העוברים בהצלחה את הגדנ"ע יזכו לקבל זימון לגיבוש מלש"ב ליחידה שיתקיים במרץ 2021',
-  'ותעברו בהצלחה את גיבוש המלש"ב ליחידה, יובטח לכם שיבוץ על פי תנאי התאמתכם מקום בפתיחת מסלול לוחם עוקץ',
-  "שים לב, זימונך לגיבוש מותנה בנתוניך האישיים והרפואיים שנקבעו לך בצו הראשון",
-  'ההרשמה לגדנ"ע תיפתח לתלמידי כיתה י"א באפריל 2020'
-];
-
 const CallToAction = withStyles(theme => ({
   root: {
     background: blueGrey[50]
@@ -29,9 +20,25 @@ export default ({ even, action }) => (
     <MainContainer even={even}>
       <SectionTitle>תיאור הגדנ"ע</SectionTitle>
       <MyDivider />
-      {lines.map(line => (
-        <Typography variant="subtitle1">{line}</Typography>
-      ))}
+      <Typography variant="subtitle1">
+        במהלך הגדנ"ע תזכו להנות מהזדמנות חד פעמית להציץ לעולמה של יחידה מיוחדת
+        המשלבת לוחמה עם כלבים
+      </Typography>
+      <Typography variant="subtitle1">
+        העוברים בהצלחה את הגדנ"ע יזכו לקבל זימון לגיבוש מלש"ב ליחידה שיתקיים
+        במרץ 2021
+      </Typography>
+      <Typography variant="subtitle1">
+        במידה ותעברו בהצלחה את גיבוש המלש"ב ליחידה, יובטח לכם, על פי תנאי
+        התאמתכם, שיבוץ בפתיחת מסלול לוחם עוקץ
+      </Typography>
+      <Typography variant="subtitle1">
+        שים לב, זימונך לגיבוש{" "}
+        <b>מותנה בנתוניך האישיים והרפואיים שנקבעו לך בצו הראשון</b>
+      </Typography>
+      <Typography variant="subtitle1">
+        ההרשמה לגדנ"ע תיפתח לתלמידי כיתה י"א באפריל 2020
+      </Typography>
       <MyDivider />
       <CallToAction onClick={action}>לטופס ההרשמה</CallToAction>
     </MainContainer>
