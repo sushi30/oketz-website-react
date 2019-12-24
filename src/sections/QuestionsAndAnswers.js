@@ -6,7 +6,9 @@ import Section from "../components/Section";
 import MyDivider from "../components/MyDivider";
 
 const Question = ({ children }) => (
-  <Typography variant="subtitle1" style={{fontWeight: 550}}>{children}</Typography>
+  <Typography variant="subtitle1" style={{ fontWeight: 550 }}>
+    {children}
+  </Typography>
 );
 const Answer = ({ children }) => (
   <Typography variant="subtitle1">{children}</Typography>
@@ -25,7 +27,8 @@ export default ({ even }) => (
         אם הייתי בגדנע הקודמת ועשיתי מכינה ואני רוצה לעשות גיבוש אני יכול?
       </Question>
       <Answer>
-        היית צריך לעשות את הגיבוש בשנה שעברה, מקרים פרטניים יעברו לבחינה של מיטב
+        ככלל- לא, היית צריך לעשות את הגיבוש בשנה שעברה, עם זאת מקרים פרטניים
+        יעברו לבחינה של מיט"ב
       </Answer>
     </MainContainer>
   </Section>
