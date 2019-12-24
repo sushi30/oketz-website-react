@@ -15,20 +15,18 @@ export default ({ even }) => (
     <MainContainer even={even}>
       <SectionTitle>תאריכי הגדנ"ע</SectionTitle>
       <MyDivider />
-      <Container style={{ maxWidth: 200 }}>
-        <List>
-          <ListItem>
-            <ListItemIcon>
-              <CalendarIcon fontSize="large" />
-            </ListItemIcon>
-            <ListItemText
-              primary="תאריכי הגדנע יפורסמו בקרוב"
-              primaryTypographyProps={{ variant: "h5" }}
-              style={{ textAlign: "right" }}
-            />
-          </ListItem>
-        </List>
-      </Container>
+      <List>
+        <ListItem>
+          <ListItemIcon>
+            <CalendarIcon fontSize="large" />
+          </ListItemIcon>
+          <ListItemText
+            primary="הגנד&quot;ע תערך במהלך חודש מרץ 2020, תאריכים מדויקים יתעדכנו בהמשך."
+            primaryTypographyProps={{ variant: "h5" }}
+            style={{ textAlign: "right" }}
+          />
+        </ListItem>
+      </List>
     </MainContainer>
   </Section>
 );
