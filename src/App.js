@@ -16,6 +16,14 @@ function App() {
           {mobile ? <MobileNavBar /> : <NavBar />}
           <Body />
         </ThemeProvider>
+        {/* Go to www.addthis.com/dashboard to customize your tools */}
+        {(process.env.REACT_APP_ENV == "prod") &
+          (
+            <script
+              type="text/javascript"
+              src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bbcce7127862215"
+            />
+          )}
       </div>
     </body>
   );
