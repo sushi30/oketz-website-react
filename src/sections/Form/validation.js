@@ -19,11 +19,10 @@ export default Yup.object().shape({
     .test("valid-id", "מספר זהות לא תקין", validateId)
     .required("שדה חובה"),
   grade: Yup.number("שדה חובה")
-    .integer("שדה חובה")
     .oneOf([11, 12], "שדה חובה")
     .required("שדה חובה"),
   gender: Yup.string()
-    .oneOf(["male", "female"], "שדה חובה")
+    .oneOf(["male"], "גדנע עוקץ פתוח השנה לגברים בלבד")
     .required("שדה חובה"),
   gapYear: Yup.boolean()
 });
