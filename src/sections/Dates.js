@@ -22,17 +22,7 @@ export default ({ even }) => (
               <CalendarIcon fontSize="large" />
             </ListItemIcon>
             <ListItemText
-              primary="18-20/9"
-              primaryTypographyProps={{ variant: "h5" }}
-              style={{ textAlign: "right" }}
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <CalendarIcon fontSize="large" />
-            </ListItemIcon>
-            <ListItemText
-              primary="23-25/9"
+              primary="תאריכי הגדנע יפורסמו בקרוב"
               primaryTypographyProps={{ variant: "h5" }}
               style={{ textAlign: "right" }}
             />
