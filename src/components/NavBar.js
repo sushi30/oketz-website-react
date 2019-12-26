@@ -36,13 +36,13 @@ export default function NavBar() {
       <AppBar>
         <Toolbar className={classes.root}>
           <NavItem to="description" text="תיאור" />
-          <NavItem to="dates" text="תאריכים" />
           <img
             src="logo.png"
             alt="logo"
             className={classes.image}
             onClick={() => scroll.scrollToTop({ duration: 500 })}
           />
+          <NavItem to="dates" text="תאריכים" />
           <NavItem to="form" text="רישום" />
         </Toolbar>
       </AppBar>
