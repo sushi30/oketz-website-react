@@ -20,7 +20,7 @@ export default ({ even }) => (
             <CalendarIcon fontSize="large" />
           </ListItemIcon>
           <ListItemText
-            primary="הגנד&quot;ע תערך במהלך חודש מרץ 2020, תאריכים מדויקים יתעדכנו בהמשך"
+            primary="הגנד&quot;ע תערך במהלך חודש ספטמבר 2020, תאריכים מדויקים יתעדכנו בהמשך"
             primaryTypographyProps={{ variant: "h5" }}
             style={{ textAlign: "right" }}
           />
