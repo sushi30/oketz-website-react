@@ -13,6 +13,7 @@ import IntroDialog from "./dialogs/IntroDialog";
 import SubmitSuccessDialog from "./dialogs/SubmitSuccessDialog";
 import ErrorDialog from "./dialogs/ErrorDialog";
 import ThankYou from "./sections/ThankYou";
+import ComingSoon from "./sections/Form/ComingSoon";
 
 const callToAction = () =>
   Scroller.scroller.scrollTo("form", {
@@ -35,10 +36,6 @@ const Body = () => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <IntroDialog
-        open={introDialogOpen}
-        handleClose={() => setIntroDialogOpen(false)}
-      />
       <SubmitSuccessDialog
         open={successDialogOpen}
         handleClose={() => setSuccessDialogOpen(false)}
@@ -55,16 +52,7 @@ const Body = () => {
       <QuestionsAndAnswers even={true} />
       <Portfolio even={true} />
       <Element name="form">
-        {hideForm ? (
-          <ThankYou even={true} />
-        ) : (
-          <Form
-            even={true}
-            handleSubmit={API.submitForm}
-            handleSubmitError={handleSubmitError}
-            handleSubmitSuccess={handleSubmitSuccess}
-          />
-        )}
+        <ComingSoon even={true} />
       </Element>
     </div>
   );
