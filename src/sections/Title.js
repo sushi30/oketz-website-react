@@ -27,7 +27,7 @@ const Title = ({ action }) => {
     <section>
       <MainContainer transparent className={classes.root}>
         <Typography variant="h2" className={classes.title}>
-          גדנ"ע עוקץ 2019
+          גדנ"ע עוקץ
         </Typography>
         <Typography
           variant="h4"
@@ -40,7 +40,7 @@ const Title = ({ action }) => {
             fontWeight: 400
           }}
         >
-          ההרשמה פתוחה
+          ההרשמה לגדנ"ע 2020 תיפתח בקרוב
         </Typography>
         <StyledButton onClick={action}>הרשמו עכשיו</StyledButton>
       </MainContainer>
