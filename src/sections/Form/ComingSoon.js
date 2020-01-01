@@ -18,7 +18,7 @@ export default ({ even }) => {
   return (
     <Section even={even} className={classes.section}>
       <MainContainer even={even}>
-        <SectionTitle>ההרשמה לגדנ"ע עוקת תיפתח ב2020</SectionTitle>
+        <SectionTitle>ההרשמה לגדנ"ע עוקץ תיפתח ב2020</SectionTitle>
       </MainContainer>
     </Section>
   );
